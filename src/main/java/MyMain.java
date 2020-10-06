@@ -5,26 +5,63 @@ public class MyMain {
     // Returns in the answer as a double corresponding to the percentage
     // For example, 75.5% would be 75.5
     public static double probabilityOneSix() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        
+        int is_six = 0;
+        for (int i = 0; i < 10000; i++) {
+            for (int j = 0; j < 6; j++) {
+                int roll = (int) (Math.random() * 6) + 1;
+                if (roll == 6) {
+                    is_six += 1;
+                    break;
+                }
+            }
+        }
+        return (is_six / 10000.0 * 100);
     }
-
     // Calculate the probability of rolling at least two 6's when rolling 
     // twelve dice. Uses 10000 trials.
     public static double probabilityTwoSixes() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        int is_six = 0;
+        for(int i = 0; i < 10000; i++) {
+            int num_of_six = 0;
+            for(int j = 0; j < 12; j++) {
+                int roll = (int) (Math.random() * 6) + 1;
+                if (roll == 6 && num_of_six >= 2) {
+                    is_six += 1;
+                    break;
+                }
+                else if (roll == 6) {
+                    num_of_six += 1;
+                }
+            }
+        }
+        return (is_six / 10000.0 * 100);
     }
 
     // Calculate the probability of rolling at least three 6's when rolling 
     // eighteen dice. Uses 10000 trials.
     public static double probabilityThreeSixes() {
-        // REPLACE WITH YOUR CODE HERE
-        return -1.0;
+        int is_six = 0;
+        for (int i = 0; i < 10000; i++) {
+            int num_of_six = 0;
+            for (int j = 0; j < 18; j++) {
+                int roll = (int) (Math.random() * 6) + 1;
+                if (roll == 6 && num_of_six >= 3) {
+                    is_six += 1;
+                    break;
+                }
+                else if (roll == 6) {
+                    num_of_six += 1;
+                }
+            }
+        }
+        return (is_six / 10000.0 * 100);
     }
 
 
     public static void main(String[] args) {
-        // YOUR CODE HERE
+        System.out.println(probabilityOneSix());
+        System.out.println(probabilityTwoSixes());
+        System.out.println(probabilityThreeSixes());
     }
 }
