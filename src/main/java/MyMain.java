@@ -26,7 +26,7 @@ public class MyMain {
             int num_of_six = 0;
             for(int j = 0; j < 12; j++) {
                 int roll = (int) (Math.random() * 6) + 1;
-                if (roll == 6 && num_of_six >= 2) {
+                if (roll == 6 && num_of_six >= 1) {
                     is_six += 1;
                     break;
                 }
@@ -46,7 +46,7 @@ public class MyMain {
             int num_of_six = 0;
             for (int j = 0; j < 18; j++) {
                 int roll = (int) (Math.random() * 6) + 1;
-                if (roll == 6 && num_of_six >= 3) {
+                if (roll == 6 && num_of_six >= 2) {
                     is_six += 1;
                     break;
                 }
